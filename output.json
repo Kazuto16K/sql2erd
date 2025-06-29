@@ -12,7 +12,7 @@
           ]
         },
         {
-          "name": "name",
+          "name": "user_name",
           "type": "VARCHAR(100)",
           "constraints": []
         },

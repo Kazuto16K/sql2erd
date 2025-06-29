@@ -75,11 +75,11 @@ def parse_create_table(tokens):
     }
 
 
-def parsed_sql():
-    with open("demo.sql", "r") as file:
-        sql = file.read()
+def parsed_sql(sql_text):
+    #with open("demo.sql", "r") as file:
+    #    sql = file.read()
 
-    parsed = parser(sql)
+    parsed = parser(sql_text)
 
     with open("output.json", "w") as f:
         json.dump(parsed, f, indent=2)

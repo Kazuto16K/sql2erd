@@ -1,7 +1,3 @@
-from parser import parsed_sql
-
-parsed = parsed_sql()
-
 def find_table_relations(tables):
     relations = []
 
@@ -60,6 +56,3 @@ def find_table_relations(tables):
                 relations.append(relation)
 
     return relations
-
-relations = find_table_relations(parsed["tables"])
-print(relations)
