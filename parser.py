@@ -74,9 +74,13 @@ def parse_create_table(tokens):
         "foreign_keys": fks
     }
 
-with open("demo.sql", "r") as file:
-    sql = file.read()
 
-parsed = parser(sql)
-with open("output.json", "w") as f:
-    json.dump(parsed, f, indent=2)
+def parsed_sql():
+    with open("demo.sql", "r") as file:
+        sql = file.read()
+
+    parsed = parser(sql)
+
+    with open("output.json", "w") as f:
+        json.dump(parsed, f, indent=2)
+    return parsed
