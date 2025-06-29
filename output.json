@@ -1,0 +1,63 @@
+{
+  "tables": [
+    {
+      "name": "Users",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INT",
+          "constraints": [
+            "PRIMARY",
+            "KEY"
+          ]
+        },
+        {
+          "name": "name",
+          "type": "VARCHAR(100)",
+          "constraints": []
+        },
+        {
+          "name": "email",
+          "type": "VARCHAR(100)",
+          "constraints": [
+            "UNIQUE"
+          ]
+        }
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "Orders",
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "INT",
+          "constraints": [
+            "PRIMARY",
+            "KEY"
+          ]
+        },
+        {
+          "name": "user_id",
+          "type": "INT",
+          "constraints": []
+        }
+      ],
+      "primary_key": [
+        "order_id"
+      ],
+      "foreign_keys": [
+        {
+          "column": "user_id",
+          "references": {
+            "table": "Users",
+            "column": "id"
+          }
+        }
+      ]
+    }
+  ]
+}
